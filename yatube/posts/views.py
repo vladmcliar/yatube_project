@@ -6,7 +6,11 @@ from django.template import loader
 
 def index(request):
     template = 'posts/index.html'
-    return render(request, template)
+    text = 'Это главная страница проекта Yatube'
+    context = {
+        'text': text
+    }
+    return render(request, template, context)
 
 
 def posts_list(request):
@@ -15,5 +19,10 @@ def posts_list(request):
 
 # Страница со списком мороженого
 def group_posts(request, slug):
-    return HttpResponse(f'Список мороженого по группе{slug}')
+    template = 'posts/group_list.html'
+    text = 'Тут будут посты'
+    context = {
+    'text': text
+    }
+    return render(request, template)
 # Create your views here.
