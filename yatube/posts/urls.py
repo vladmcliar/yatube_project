@@ -2,8 +2,9 @@
 from django.urls import include, path
 from . import views
 
+app_name = 'posts'
+
 urlpatterns = [
     path('', views.index, name = 'home'),
-    path('posts/', views.posts_list),
-    path('group/', views.group_posts, name = 'group_list')
+    path('group/', views.group_posts, name = 'group_list'),
 ]
